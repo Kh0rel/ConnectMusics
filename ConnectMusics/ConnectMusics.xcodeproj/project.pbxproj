@@ -10,6 +10,10 @@
 		2C5A54E81E411E1700C844C4 /* ConnectMusics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5A54DE1E411E1700C844C4 /* ConnectMusics.framework */; };
 		2C5A54ED1E411E1700C844C4 /* ConnectMusicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5A54EC1E411E1700C844C4 /* ConnectMusicsTests.swift */; };
 		2C5A54EF1E411E1700C844C4 /* ConnectMusics.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C5A54E11E411E1700C844C4 /* ConnectMusics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C5A54F91E411EA600C844C4 /* ConnectMusics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5A54F81E411EA600C844C4 /* ConnectMusics.swift */; };
+		2C5A54FD1E41204B00C844C4 /* ProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5A54FC1E41204B00C844C4 /* ProviderType.swift */; };
+		2C5A54FF1E41226F00C844C4 /* CMSharedProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5A54FE1E41226E00C844C4 /* CMSharedProviders.swift */; };
+		2C5A55011E41244700C844C4 /* CMBaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5A55001E41244700C844C4 /* CMBaseProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,10 @@
 		2C5A54E71E411E1700C844C4 /* ConnectMusicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConnectMusicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C5A54EC1E411E1700C844C4 /* ConnectMusicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectMusicsTests.swift; sourceTree = "<group>"; };
 		2C5A54EE1E411E1700C844C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C5A54F81E411EA600C844C4 /* ConnectMusics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectMusics.swift; sourceTree = "<group>"; };
+		2C5A54FC1E41204B00C844C4 /* ProviderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderType.swift; sourceTree = "<group>"; };
+		2C5A54FE1E41226E00C844C4 /* CMSharedProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSharedProviders.swift; sourceTree = "<group>"; };
+		2C5A55001E41244700C844C4 /* CMBaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMBaseProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +79,11 @@
 		2C5A54E01E411E1700C844C4 /* ConnectMusics */ = {
 			isa = PBXGroup;
 			children = (
+				2C5A54FA1E41201100C844C4 /* models */,
 				2C5A54E11E411E1700C844C4 /* ConnectMusics.h */,
 				2C5A54E21E411E1700C844C4 /* Info.plist */,
+				2C5A54F81E411EA600C844C4 /* ConnectMusics.swift */,
+				2C5A54FE1E41226E00C844C4 /* CMSharedProviders.swift */,
 			);
 			path = ConnectMusics;
 			sourceTree = "<group>";
@@ -84,6 +95,31 @@
 				2C5A54EE1E411E1700C844C4 /* Info.plist */,
 			);
 			path = ConnectMusicsTests;
+			sourceTree = "<group>";
+		};
+		2C5A54FA1E41201100C844C4 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				2C5A55021E41325200C844C4 /* protocol */,
+				2C5A54FB1E41201B00C844C4 /* enum */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		2C5A54FB1E41201B00C844C4 /* enum */ = {
+			isa = PBXGroup;
+			children = (
+				2C5A54FC1E41204B00C844C4 /* ProviderType.swift */,
+			);
+			name = enum;
+			sourceTree = "<group>";
+		};
+		2C5A55021E41325200C844C4 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				2C5A55001E41244700C844C4 /* CMBaseProvider.swift */,
+			);
+			name = protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +185,7 @@
 					2C5A54DD1E411E1700C844C4 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = D4GMNKX6R5;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					2C5A54E61E411E1700C844C4 = {
@@ -198,6 +235,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C5A54FD1E41204B00C844C4 /* ProviderType.swift in Sources */,
+				2C5A54F91E411EA600C844C4 /* ConnectMusics.swift in Sources */,
+				2C5A54FF1E41226F00C844C4 /* CMSharedProviders.swift in Sources */,
+				2C5A55011E41244700C844C4 /* CMBaseProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +363,7 @@
 		2C5A54F31E411E1700C844C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = D4GMNKX6R5;
@@ -334,6 +376,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.shemana.ConnectMusics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -341,6 +384,7 @@
 		2C5A54F41E411E1700C844C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = D4GMNKX6R5;
@@ -360,6 +404,7 @@
 		2C5A54F61E411E1700C844C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = D4GMNKX6R5;
 				INFOPLIST_FILE = ConnectMusicsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -372,6 +417,7 @@
 		2C5A54F71E411E1700C844C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = D4GMNKX6R5;
 				INFOPLIST_FILE = ConnectMusicsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

@@ -10,9 +10,9 @@ import Foundation
 
 protocol CMBaseProvider {
     
-    var providerType: ProviderType? { get set }
+    var type: ProviderType? { get set }
     
-    func loginWithCredentials(cliendID:String,clientSecret:String?,username:String?,password:String?)
+    func loginWithCredentials(cliendID:String?,clientSecret:String?,username:String?,password:String?)
     func getSongs()
     func getPlaylists()
     func getAlbum()

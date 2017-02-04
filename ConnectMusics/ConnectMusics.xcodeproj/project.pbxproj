@@ -14,6 +14,9 @@
 		2C5A54FD1E41204B00C844C4 /* ProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5A54FC1E41204B00C844C4 /* ProviderType.swift */; };
 		2C5A54FF1E41226F00C844C4 /* CMSharedProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5A54FE1E41226E00C844C4 /* CMSharedProviders.swift */; };
 		2C5A55011E41244700C844C4 /* CMBaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5A55001E41244700C844C4 /* CMBaseProvider.swift */; };
+		2CD4C5F21E464B02009F4376 /* CMPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD4C5F11E464B02009F4376 /* CMPlaylist.swift */; };
+		2CD4C5F61E4654C4009F4376 /* CMAppleMusicProviderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD4C5F51E4654C4009F4376 /* CMAppleMusicProviderManager.swift */; };
+		2CD4C5F81E4655D1009F4376 /* CMAppleMusicProviderNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD4C5F71E4655D1009F4376 /* CMAppleMusicProviderNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,9 @@
 		2C5A54FC1E41204B00C844C4 /* ProviderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderType.swift; sourceTree = "<group>"; };
 		2C5A54FE1E41226E00C844C4 /* CMSharedProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSharedProviders.swift; sourceTree = "<group>"; };
 		2C5A55001E41244700C844C4 /* CMBaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMBaseProvider.swift; sourceTree = "<group>"; };
+		2CD4C5F11E464B02009F4376 /* CMPlaylist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMPlaylist.swift; sourceTree = "<group>"; };
+		2CD4C5F51E4654C4009F4376 /* CMAppleMusicProviderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMAppleMusicProviderManager.swift; sourceTree = "<group>"; };
+		2CD4C5F71E4655D1009F4376 /* CMAppleMusicProviderNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMAppleMusicProviderNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,8 @@
 		2C5A54E01E411E1700C844C4 /* ConnectMusics */ = {
 			isa = PBXGroup;
 			children = (
+				2CD4C5F41E465482009F4376 /* network */,
+				2CD4C5F31E46547A009F4376 /* manager */,
 				2C5A54FA1E41201100C844C4 /* models */,
 				2C5A54E11E411E1700C844C4 /* ConnectMusics.h */,
 				2C5A54E21E411E1700C844C4 /* Info.plist */,
@@ -100,6 +108,7 @@
 		2C5A54FA1E41201100C844C4 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				2CD4C5F01E464AE8009F4376 /* object */,
 				2C5A55021E41325200C844C4 /* protocol */,
 				2C5A54FB1E41201B00C844C4 /* enum */,
 			);
@@ -120,6 +129,30 @@
 				2C5A55001E41244700C844C4 /* CMBaseProvider.swift */,
 			);
 			name = protocol;
+			sourceTree = "<group>";
+		};
+		2CD4C5F01E464AE8009F4376 /* object */ = {
+			isa = PBXGroup;
+			children = (
+				2CD4C5F11E464B02009F4376 /* CMPlaylist.swift */,
+			);
+			name = object;
+			sourceTree = "<group>";
+		};
+		2CD4C5F31E46547A009F4376 /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				2CD4C5F51E4654C4009F4376 /* CMAppleMusicProviderManager.swift */,
+			);
+			name = manager;
+			sourceTree = "<group>";
+		};
+		2CD4C5F41E465482009F4376 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				2CD4C5F71E4655D1009F4376 /* CMAppleMusicProviderNetwork.swift */,
+			);
+			name = network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,9 +269,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C5A54FD1E41204B00C844C4 /* ProviderType.swift in Sources */,
+				2CD4C5F61E4654C4009F4376 /* CMAppleMusicProviderManager.swift in Sources */,
 				2C5A54F91E411EA600C844C4 /* ConnectMusics.swift in Sources */,
 				2C5A54FF1E41226F00C844C4 /* CMSharedProviders.swift in Sources */,
 				2C5A55011E41244700C844C4 /* CMBaseProvider.swift in Sources */,
+				2CD4C5F81E4655D1009F4376 /* CMAppleMusicProviderNetwork.swift in Sources */,
+				2CD4C5F21E464B02009F4376 /* CMPlaylist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +482,7 @@
 				2C5A54F41E411E1700C844C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C5A54F51E411E1700C844C4 /* Build configuration list for PBXNativeTarget "ConnectMusicsTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +491,7 @@
 				2C5A54F71E411E1700C844C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

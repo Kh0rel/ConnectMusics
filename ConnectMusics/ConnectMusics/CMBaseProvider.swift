@@ -12,7 +12,7 @@ protocol CMBaseProvider {
     
     var type: ProviderType? { get set }
     
-    func loginWithCredentials(cliendID:String?,clientSecret:String?,username:String?,password:String?)
+    func createProviderInstance(cliendID:String?,clientSecret:String?,username:String?,password:String?) -> CMBaseProvider
     func getSongs()
     func getPlaylists()
     func getAlbum()

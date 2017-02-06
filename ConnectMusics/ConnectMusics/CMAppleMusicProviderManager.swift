@@ -10,15 +10,18 @@ class CMAppleMusicProviderManager: CMBaseProvider {
 
     var type: ProviderType? = .appleMusic
     
-    func loginWithCredentials(cliendID:String?,clientSecret:String?,username:String?,password:String?) {
-        
+    func createProviderInstance(cliendID:String?,clientSecret:String?,username:String?,password:String?) -> CMBaseProvider {
+        return CMAppleMusicProviderManager()
     }
+    
     func getSongs() {
         
     }
+    
     func getPlaylists() {
         
     }
+    
     func getAlbum() {
         
     }

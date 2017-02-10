@@ -1,7 +1,7 @@
 lane :test do
 
    scan(
-   code_coverage: true
+    code_coverage: true
    )
    xcov
 
@@ -18,7 +18,7 @@ lane :deploy do
       description: changelog_from_git_commits(),
       commintish: "master"
     )
-    pod_push
+    pod_push()
   end
 
 end

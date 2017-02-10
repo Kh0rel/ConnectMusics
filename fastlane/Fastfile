@@ -1,10 +1,24 @@
-lane :test do {
+lane :test do
+
    scan(
    code_coverage: true
    )
    xcov
-}
 
-lane :deploy do {
+end
+
+lane :deploy do
   if git_branch() == "master"
-}
+    version = get_version_number()
+    set_github_release(
+      repository_name: "shemana/ConnectMusics",
+      name: "ConnectMusics v.#{version}",
+      api_token: ENV["GITHUB_TOKEN"],
+      tag_name: "v.#{version}",
+      description: changelog_from_git_commits(),
+      commintish: "master"
+    )
+    pod_push
+  end
+
+end

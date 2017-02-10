@@ -6,16 +6,21 @@
 //  Copyright © 2017 com.github.shemana.application. All rights reserved.
 //
 
+import MediaPlayer
+
 class CMPlaylist: NSObject {
 
     var name:String = ""
-    var url:String?
-    var mediaItem:Any?
+    var mediaItem:AnyObject?
     var provider:ProviderType?
     
-    static public func initPlaylistFromJSON() -> CMPlaylist {
+    static public func initPlaylistFromAppleMusic(playlistItem:MPMediaPlaylist) -> CMPlaylist {
+        var playlistInstance:CMPlaylist = CMPlaylist()
         
+        playlistInstance.name = playlistItem.name!
+        playlistInstance.mediaItem = playlistItem
+        playlistInstance.provider = .appleMusic
         
-        return CMPlaylist()
+        return playlistInstance
     }
 }

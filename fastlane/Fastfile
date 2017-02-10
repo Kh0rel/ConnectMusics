@@ -1,0 +1,10 @@
+lane :test do {
+   scan(
+   code_coverage: true
+   )
+   xcov
+}
+
+lane :deploy do {
+  if git_branch() == "master"
+}

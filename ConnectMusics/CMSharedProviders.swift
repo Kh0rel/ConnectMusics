@@ -16,6 +16,8 @@ class CMSharedProviders: NSObject {
     
     private var providersInstance:[CMBaseProvider] = []
     
+    //TODO UNIT TEST CREATE A NEW PROVIDER 
+    //TODO UNIT TEST 2 test second creation of the same provider type -> return error
     internal func addProviders(provider:ProviderType,clientID:String? = nil,clientSecret:String? = nil,username:String? = nil,password:String? = nil) {
         //Condition If an provider already exist
         switch provider {
@@ -37,9 +39,9 @@ class CMSharedProviders: NSObject {
         return nil
     }
     // TODO UNIT TEST ONLY A PROVIDER TYPE DEFINED IN PARAMATER
+    
     public func getPlaylistsByProviderType(providerType:ProviderType) -> [CMPlaylist]? {
         var filteredPlaylists:[CMPlaylist] = []
-        
         for playlist in playlists {
             if playlist.provider == providerType {
                 filteredPlaylists.append(playlist)
@@ -50,7 +52,5 @@ class CMSharedProviders: NSObject {
         }
         
         return filteredPlaylists
-    }
-    
-    
+    } 
 }

@@ -37,9 +37,9 @@ class CMSharedProviders: NSObject {
         return nil
     }
     // TODO UNIT TEST ONLY A PROVIDER TYPE DEFINED IN PARAMATER
+    
     public func getPlaylistsByProviderType(providerType:ProviderType) -> [CMPlaylist]? {
         var filteredPlaylists:[CMPlaylist] = []
-        
         for playlist in playlists {
             if playlist.provider == providerType {
                 filteredPlaylists.append(playlist)
@@ -50,7 +50,5 @@ class CMSharedProviders: NSObject {
         }
         
         return filteredPlaylists
-    }
-    
-    
+    } 
 }

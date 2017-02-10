@@ -17,7 +17,6 @@ class ConnectMusics: NSObject {
     
     public func initProvider(provider:ProviderType,clientID:String? = nil,clientSecret:String? = nil,username:String? = nil,password:String? = nil) {
         self.getInstance().addProviders(provider: provider, clientID: clientID, clientSecret: clientSecret, username: username, password: password)
-        
     }
 
 }

@@ -10,3 +10,5 @@ s.source = { :git => "https://github.com/shemana/ConnectMusics/", :tag => "v#{s.
 s.ios.deployement_target = "9.0"
 s.source_file = "ConnectMusics/*.{swift,h}"
 s.requires_arc = true
+
+end

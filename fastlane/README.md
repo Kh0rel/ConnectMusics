@@ -10,9 +10,9 @@ sudo gem install fastlane
 fastlane test
 ```
 
-### deploy
+### deployementPreparation
 ```
-fastlane deploy
+fastlane deployementPreparation
 ```
 
 

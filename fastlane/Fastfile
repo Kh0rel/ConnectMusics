@@ -18,12 +18,7 @@ lane :deployementPreparation do
       description: changelog_from_git_commits(),
       commitish: "master"
     )
-    scheme = "frameworkDeployement"
-    ipa(scheme: scheme)
+    sh("pod trunk push --allow-warnings")
   end
-
-lane :frameworkDeployement do
-  sh("pod trunk push --allow-warnings")
-end
-
+  
 end

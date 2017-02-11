@@ -15,7 +15,7 @@ class CMPlaylist: NSObject {
     var provider:ProviderType?
     
     static public func initPlaylistFromAppleMusic(playlistItem:MPMediaPlaylist) -> CMPlaylist {
-        var playlistInstance:CMPlaylist = CMPlaylist()
+        let playlistInstance:CMPlaylist = CMPlaylist()
         
         playlistInstance.name = playlistItem.name!
         playlistInstance.mediaItem = playlistItem

@@ -25,8 +25,6 @@ class CMSharedProviders: NSObject {
             break
         case .spotify:
             break
-        default:
-            break
         }
     }
     

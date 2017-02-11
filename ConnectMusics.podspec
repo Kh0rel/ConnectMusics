@@ -6,9 +6,9 @@ s.homepage  = "https://github.com/shemana/ConnectMusics/"
 s.license   = { :type => "Apache-2.0" , :file => "LICENSE"}
 s.authors    = {"Shemana" => "guillaume@chiebbouares.me",
                 "Keena"  => "meryl2194@gmail.com"}
-s.source = { :git => "https://github.com/shemana/ConnectMusics/", :tag => "v#{s.version}"}
-s.ios.deployement_target = "9.0"
-s.source_file = "ConnectMusics/*.{swift,h}"
+s.source = { :git => "https://github.com/shemana/ConnectMusics.git", :tag => "#{s.version}"}
+s.ios.deployment_target = "9.3"
+s.source_files = "ConnectMusics/*{swift,h}"
 s.requires_arc = true
 
 end

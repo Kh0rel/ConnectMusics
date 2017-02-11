@@ -15,4 +15,4 @@ before_install:
 script:
   - bundle exec fastlane test
 after_success:
-  - bundle exec fastlane deploy
+  - bundle exec fastlane deployementPreparation

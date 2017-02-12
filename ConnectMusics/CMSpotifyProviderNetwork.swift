@@ -24,11 +24,7 @@ class CMSpotifyProviderNetwork {
     
     private func applicationAuthentication() {
         let url = URL(string: "https://accounts.spotify.com/authorize/?client_id=\(clientInformation["client_id"])&response_type=code&redirect_uri=\(clientInformation["redirect_uri"])&scope=\(clientInformation["scopeNeeded"])")
-        if Double(UIDevice().systemVersion)! > 10.0 {
-            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
-        } else {
             UIApplication.shared.openURL(url!)
-        }
     }
     
     func getUserToken(authenticationCode: String) {

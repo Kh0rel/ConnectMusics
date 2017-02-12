@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "ConnectMusics"
-  s.version      = "0.30.1"
+  s.version      = "0.30.2"
   s.summary      = "ConnectMusics is a framework which allow you to simply connect multiple music provider like Spotify and AppleMusic"
 
   s.homepage     = "https://github.com/shemana/ConnectMusics"

@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc enum ProviderType:Int {
+@objc public enum ProviderType:Int {
     case spotify = 0
     case appleMusic = 1
 }

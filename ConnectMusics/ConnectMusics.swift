@@ -15,8 +15,8 @@ class ConnectMusics: NSObject {
         return CMSharedProviders.sharedInstance
     }
     
-    public func initProvider(provider:ProviderType,clientID:String? = nil,clientSecret:String? = nil,username:String? = nil,password:String? = nil) {
-        self.getInstance().addProviders(provider: provider, clientID: clientID, clientSecret: clientSecret, username: username, password: password)
+    public func initProvider(provider:ProviderType,clientID:String? = nil,clientSecret:String? = nil,redirectURI:String? = nil,scopeNeeded:String? = nil) {
+        self.getInstance().addProviders(provider: provider, clientID: cliendID, clientSecret: clientSecret, redirectURI: redirectURI, scopeNeeded: scopeNeeded)
     }
 
 }

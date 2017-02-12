@@ -11,21 +11,30 @@ import Alamofire
 import SwiftyJSON
 
 class CMSpotifyProviderNetwork {
-    func GetAuthCode(clientID: String, redirectURI: String, scopeNeeded: String?) {
-        let scope = scopeNeeded ?? "playlist-read-private playlist-read-collaborative user-library-read user-read-private user-top-read"
-        let url = URL(string: "https://accounts.spotify.com/authorize/?client_id=\(clientID)&response_type=code&redirect_uri=\(redirectURI)&scope=\(scope)")
+    
+    internal var clientInformation:[String:String] = [:]
+    
+    init(clientID:String,clientSecret:String,redirectURI:String,scopeNeeded:String?) {
+        clientInformation["client_id"] = clientID
+        clientInformation["client_secret"] = clientSecret
+        clientInformation["redirect_uri"] = redirectURI
+        clientInformation["scopeNeeded"] = scopeNeeded ?? "playlist-read-private playlist-read-collaborative user-library-read user-read-private user-top-read"
+        applicationAuthentication()
+    }
+    
+    private func applicationAuthentication() {
+        let url = URL(string: "https://accounts.spotify.com/authorize/?client_id=\(clientInformation["client_id"])&response_type=code&redirect_uri=\(clientInformation["redirect_uri"])&scope=\(clientInformation["scopeNeeded"])")
         UIApplication.shared.open(url!, options: [:], completionHandler: nil)
-        
     }
         
-    func GetTokens(clientID: String, clientSecret : String, redirectURI : String, authCode : String) {
-            let client = clientID + ":" + clientSecret
+    func getUserToken(authenticationCode: String) {
+            let client = clientInformation["client_id"]! + ":" + clientInformation["client_secret"]!
             let data = (client as NSString).data(using: String.Encoding.utf8.rawValue)
             let base64 = data!.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
             let parameters = [
                 "grant_type" : "authorization_code",
-                "code" : authCode.replacingOccurrences(of: "\(redirectURI)?code=", with: ""),
-                "redirect_uri" : redirectURI
+                "code" : authenticationCode.replacingOccurrences(of: "\(clientInformation["redirect_uri"])?code=", with: ""),
+                "redirect_uri" : clientInformation["redirect_uri"]
             ]
             let headers = [
                 "Authorization" : "Basic " + base64
@@ -33,18 +42,16 @@ class CMSpotifyProviderNetwork {
             ]
             Alamofire.request("https://accounts.spotify.com/api/token", method: .post, parameters: parameters, headers: headers).responseJSON(completionHandler: { (response:DataResponse<Any>) in
                 let data = JSON(data: response.data!)
-                let tokens = [
-                    "access_token" : data["access_token"].string,
-                    "refresh_token" : data["refresh_token"].string
-                ]
+                self.clientInformation["access_token"] = data["access_token"].string
+                self.clientInformation["refresh_token"] = data["refresh_token"].string
             })
             
             //return tokens
             
         }
     
-   /* func getPlaylists(accesToken : String) -> CMPlaylist {
-        
-    }*/
+    func getPlaylists() {
+        //TODO
+    }
 
 }

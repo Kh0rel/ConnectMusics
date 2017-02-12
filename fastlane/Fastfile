@@ -20,5 +20,5 @@ lane :deployementPreparation do
     )
     sh("pod trunk push --allow-warnings")
   end
-  
+
 end

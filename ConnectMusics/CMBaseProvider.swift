@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CMBaseProvider {
+public protocol CMBaseProvider {
     
     var type: ProviderType? { get set }
     

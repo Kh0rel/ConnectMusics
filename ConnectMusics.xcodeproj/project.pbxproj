@@ -20,6 +20,8 @@
 		6E2731C68FA2148B2EE6914B /* Pods_ConnectMusicsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC3D3B2B8E62D7822C45AB3 /* Pods_ConnectMusicsTests.framework */; };
 		74179C981E4FDEF20037F924 /* CMSpotifyProviderNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74179C971E4FDEF20037F924 /* CMSpotifyProviderNetwork.swift */; };
 		74179C9A1E4FF6080037F924 /* CMSpotifyProviderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74179C991E4FF6080037F924 /* CMSpotifyProviderManager.swift */; };
+		74179C9C1E5102FD0037F924 /* CMSpotifyPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74179C9B1E5102FD0037F924 /* CMSpotifyPlaylist.swift */; };
+		74179C9E1E51113B0037F924 /* CMSpotifyTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74179C9D1E51113B0037F924 /* CMSpotifyTrack.swift */; };
 		B3FAC5714D4E5722EB78693F /* Pods_ConnectMusics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90293FD7553E47323769D650 /* Pods_ConnectMusics.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		6B4D586313487274503111B3 /* Pods-ConnectMusics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnectMusics.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConnectMusics/Pods-ConnectMusics.debug.xcconfig"; sourceTree = "<group>"; };
 		74179C971E4FDEF20037F924 /* CMSpotifyProviderNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSpotifyProviderNetwork.swift; sourceTree = "<group>"; };
 		74179C991E4FF6080037F924 /* CMSpotifyProviderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSpotifyProviderManager.swift; sourceTree = "<group>"; };
+		74179C9B1E5102FD0037F924 /* CMSpotifyPlaylist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSpotifyPlaylist.swift; sourceTree = "<group>"; };
+		74179C9D1E51113B0037F924 /* CMSpotifyTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSpotifyTrack.swift; sourceTree = "<group>"; };
 		90293FD7553E47323769D650 /* Pods_ConnectMusics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConnectMusics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50584BF884F6B11A9A502AA /* Pods-ConnectMusicsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnectMusicsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConnectMusicsTests/Pods-ConnectMusicsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B76AD8215ABFBEDB4CE65971 /* Pods-ConnectMusicsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnectMusicsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConnectMusicsTests/Pods-ConnectMusicsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				2CD4C5F11E464B02009F4376 /* CMPlaylist.swift */,
+				74179C9B1E5102FD0037F924 /* CMSpotifyPlaylist.swift */,
+				74179C9D1E51113B0037F924 /* CMSpotifyTrack.swift */,
 			);
 			name = object;
 			sourceTree = "<group>";
@@ -389,12 +395,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74179C9E1E51113B0037F924 /* CMSpotifyTrack.swift in Sources */,
 				2C5A54FD1E41204B00C844C4 /* ProviderType.swift in Sources */,
 				2CD4C5F61E4654C4009F4376 /* CMAppleMusicProviderManager.swift in Sources */,
 				2C5A54F91E411EA600C844C4 /* ConnectMusics.swift in Sources */,
 				2C5A54FF1E41226F00C844C4 /* CMSharedProviders.swift in Sources */,
 				74179C981E4FDEF20037F924 /* CMSpotifyProviderNetwork.swift in Sources */,
 				74179C9A1E4FF6080037F924 /* CMSpotifyProviderManager.swift in Sources */,
+				74179C9C1E5102FD0037F924 /* CMSpotifyPlaylist.swift in Sources */,
 				2C5A55011E41244700C844C4 /* CMBaseProvider.swift in Sources */,
 				2CD4C5F81E4655D1009F4376 /* CMAppleMusicProviderNetwork.swift in Sources */,
 				2CD4C5F21E464B02009F4376 /* CMPlaylist.swift in Sources */,

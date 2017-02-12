@@ -50,8 +50,23 @@ class CMSpotifyProviderNetwork {
             
         }
     
-    func getPlaylists() {
-        //TODO
+    func getPlaylists(completionHandler:@escaping ([CMSpotifyPlaylist]?,String?) -> Void){
+        let headers = [
+            "Authorization" : "Bearer " + clientInformation["access_token"]!
+        ]
+        
+        Alamofire.request("https://api.spotify.com/v1/me/playlists", method: .get, headers: headers).responseJSON { (playlists : DataResponse<Any>) in
+            var listPlaylists : [CMSpotifyPlaylist] = []
+            let jsonOjects = JSON(playlists)
+            for jsonObject in jsonOjects["items"] {
+                listPlaylists.append(CMSpotifyPlaylist.initCMSpotifyPlaylist(playlist: jsonObject.1))
+            }
+            if listPlaylists.count > 0 {
+                completionHandler(listPlaylists, nil)
+            } else {
+                completionHandler(nil, "NO PLAYLIST FOUND")
+            }
+        }
     }
 
 }

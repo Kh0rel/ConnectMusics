@@ -1,9 +1,12 @@
 lane :test do
 
    scan(
-    code_coverage: true
+    code_coverage: true,
+    scheme: "ConnectMusics"
    )
-   xcov
+   xcov(
+    scheme: "ConnectMusics"
+   )
 
 end
 

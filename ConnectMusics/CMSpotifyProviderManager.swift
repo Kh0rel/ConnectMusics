@@ -18,7 +18,7 @@ class CMSpotifyProviderManager: CMBaseProvider {
     }
     
     internal static func createProviderInstance(cliendID: String?, clientSecret: String?, redirect_uri: String?, scopeNeeded: String?) -> CMBaseProvider {
-        var managerInstance:CMSpotifyProviderManager = CMSpotifyProviderManager(cliendID: cliendID, clientSecret: clientSecret, redirect_uri: redirect_uri, scopeNeeded: scopeNeeded)
+        let managerInstance:CMSpotifyProviderManager = CMSpotifyProviderManager(cliendID: cliendID, clientSecret: clientSecret, redirect_uri: redirect_uri, scopeNeeded: scopeNeeded)
         return managerInstance
     }
     

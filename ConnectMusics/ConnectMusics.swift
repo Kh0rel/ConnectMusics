@@ -16,7 +16,7 @@ class ConnectMusics: NSObject {
     }
     
     public func initProvider(provider:ProviderType,clientID:String? = nil,clientSecret:String? = nil,redirectURI:String? = nil,scopeNeeded:String? = nil) {
-        self.getInstance().addProviders(provider: provider, clientID: cliendID, clientSecret: clientSecret, redirectURI: redirectURI, scopeNeeded: scopeNeeded)
+        self.getInstance().addProviders(provider: provider, clientID: clientID, clientSecret: clientSecret, redirectURI: redirectURI, scopeNeeded: scopeNeeded)
     }
 
 }

@@ -7,7 +7,7 @@
 //
 
 
-class ConnectMusics: NSObject {
+public class ConnectMusics: NSObject {
     /*!
      * @brief Singleton Instance , first access to Connect Music framework
      */

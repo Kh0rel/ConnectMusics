@@ -12,6 +12,6 @@ protocol CMBaseProvider {
     
     var type: ProviderType? { get set }
     
-    func createProviderInstance(cliendID:String?,clientSecret:String?,username:String?,password:String?) -> CMBaseProvider
+    static func createProviderInstance(cliendID:String?,clientSecret:String?,redirect_uri:String?,scopeNeeded:String?) -> CMBaseProvider
     func getPlaylists(completionHandler:@escaping (_ playlists:[CMPlaylist]?,_ error:String?) -> Void)
 }

@@ -1,4 +1,16 @@
-## 0.20.0 (February 12, 2017)
+## 0.30.0 (February 12, 2017)
+
+Features:
+
+- Add Spotify authentication
+
+Improvements:
+
+- Somes bugfixes
+- add pod dependencies
+
+## 0.20.0 (February 11, 2017)
+
 Features:
 
 - Add AppleMusic provider

@@ -18,12 +18,14 @@ class CMSharedProviders: NSObject {
     
     //TODO UNIT TEST CREATE A NEW PROVIDER 
     //TODO UNIT TEST 2 test second creation of the same provider type -> return error
-    internal func addProviders(provider:ProviderType,clientID:String? = nil,clientSecret:String? = nil,username:String? = nil,password:String? = nil) {
+    internal func addProviders(provider:ProviderType,clientID:String? = nil,clientSecret:String? = nil,redirectURI:String? = nil,scopeNeeded:String? = nil) {
         //Condition If an provider already exist
         switch provider {
         case .appleMusic:
+            providersInstance.append(CMAppleMusicProviderManager.createProviderInstance(cliendID: nil, clientSecret: nil, redirect_uri: nil, scopeNeeded: nil))
             break
         case .spotify:
+            providersInstance.append(CMSpotifyProviderManager.createProviderInstance(cliendID: clientID, clientSecret: clientSecret, redirect_uri: redirectURI, scopeNeeded: scopeNeeded))
             break
         }
     }

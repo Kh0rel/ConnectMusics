@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class CMSpotifyProviderNetwork {
+public class CMSpotifyProviderNetwork {
     
     internal var clientInformation:[String:String] = [:]
     
@@ -27,7 +27,7 @@ class CMSpotifyProviderNetwork {
             UIApplication.shared.openURL(url!)
     }
     
-    func getUserToken(authenticationCode: String) {
+    public func getUserToken(authenticationCode: String) {
             let client = clientInformation["client_id"]! + ":" + clientInformation["client_secret"]!
             let data = (client as NSString).data(using: String.Encoding.utf8.rawValue)
             let base64 = data!.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))

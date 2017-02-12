@@ -27,8 +27,6 @@ class CMSharedProviders: NSObject {
         case .spotify:
             providersInstance.append(CMSpotifyProviderManager.createProviderInstance(cliendID: clientID, clientSecret: clientSecret, redirect_uri: redirectURI, scopeNeeded: scopeNeeded))
             break
-        default:
-            break
         }
     }
     

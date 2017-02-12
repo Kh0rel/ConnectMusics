@@ -7,7 +7,7 @@
 
 import MediaPlayer
 import StoreKit
-
+import UIKit
 class CMAppleMusicProviderNetwork {
 
     func retrievePlaylistSubscription(completionHandler:@escaping ([MPMediaPlaylist]?,String?) -> Void) {

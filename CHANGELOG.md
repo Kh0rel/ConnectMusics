@@ -1,3 +1,9 @@
+## 0.35.0 (February 12, 2017)
+
+Improvements:
+
+- Add somes code documentation
+
 ## 0.30.0 (February 12, 2017)
 
 Features:

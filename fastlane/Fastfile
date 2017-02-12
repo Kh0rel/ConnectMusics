@@ -4,7 +4,9 @@ lane :test do
     code_coverage: true,
     scheme: "ConnectMusics"
    )
-   xcov
+   xcov(
+    scheme: "ConnectMusics"
+   )
 
 end
 

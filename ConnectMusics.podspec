@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "ConnectMusics"
-  s.version      = "v0.20.1"
+  s.version      = "0.20.1"
   s.summary      = "ConnectMusics is a framework which allow you to simply connect multiple music provider like Spotify and AppleMusic"
 
   s.homepage     = "https://github.com/shemana/ConnectMusics"
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
                   "Keena"  => "meryl2194@gmail.com"}
 
   s.ios.deployment_target = "9.3"
-  s.source       = { :git => "https://github.com/shemana/ConnectMusics.git", :tag => "#{s.version}" }
+  s.source   = { :git => "https://github.com/shemana/ConnectMusics.git", :tag => "v#{s.version}" }
   s.source_files = "ConnectMusics/*.swift"
   s.requires_arc = true
 

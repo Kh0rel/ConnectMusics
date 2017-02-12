@@ -23,4 +23,5 @@ class CMPlaylist: NSObject {
         
         return playlistInstance
     }
+    
 }

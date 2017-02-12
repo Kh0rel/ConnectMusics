@@ -12,6 +12,7 @@ notifications:
 before_install:
   - gem install bundler
   - bundle install
+  - bundle exec pod install
 script:
   - bundle exec fastlane test
 after_success:

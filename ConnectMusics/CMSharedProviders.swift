@@ -8,7 +8,7 @@
 
 
 
-class CMSharedProviders: NSObject {
+public class CMSharedProviders: NSObject {
     /*!
      * @brief Singleton instance for Providers Handler
      */
@@ -33,7 +33,7 @@ class CMSharedProviders: NSObject {
      * @param redirectURI it's your URIScheme for retrieve access_token if your provider need one URI
      * @param scopeNeeded it's a permission scheme needed for token creation , it's different for any providers
      */
-    internal func addProviders(provider:ProviderType,clientID:String? = nil,clientSecret:String? = nil,redirectURI:String? = nil,scopeNeeded:String? = nil) {
+     public func addProviders(provider:ProviderType,clientID:String? = nil,clientSecret:String? = nil,redirectURI:String? = nil,scopeNeeded:String? = nil) {
         //Condition If an provider already exist
         switch provider {
         case .appleMusic:
@@ -58,7 +58,6 @@ class CMSharedProviders: NSObject {
         return nil
     }
     // TODO UNIT TEST ONLY A PROVIDER TYPE DEFINED IN PARAMATER
-    
     public func getPlaylistsByProviderType(providerType:ProviderType) -> [CMPlaylist]? {
         var filteredPlaylists:[CMPlaylist] = []
         for playlist in playlists {

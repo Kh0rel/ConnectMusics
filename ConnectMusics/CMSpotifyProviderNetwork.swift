@@ -68,5 +68,24 @@ class CMSpotifyProviderNetwork {
             }
         }
     }
+    
+    func getTracks(playlistID : String, userID : String, completionHandler:@escaping ([CMSpotifyTrack]?, String?) -> Void) {
+        let headers = [
+            "Authorization" : "Bearer " + clientInformation["access_token"]!
+        ]
+        
+        Alamofire.request("https://api.spotify.com/v1/users/\(userID)/playlists/\(playlistID)/tracks", method: .get, headers: headers).responseJSON { (tracks : DataResponse<Any>) in
+            var listTracks : [CMSpotifyTrack] = []
+            let jsonOjects = JSON(tracks)
+            for jsonObject in jsonOjects["items"] {
+                listPlaylists.append(CMSpotifyTrack.initCMSpotifyTrack(track: jsonObject.1))
+            }
+            if listTracks.count > 0 {
+                completionHandler(listTracks, nil)
+            } else {
+                completionHandler(nil, "NO TRACK FOUND")
+            }
+        }
+    }
 
 }

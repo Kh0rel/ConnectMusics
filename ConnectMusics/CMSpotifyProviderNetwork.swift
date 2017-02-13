@@ -78,7 +78,7 @@ class CMSpotifyProviderNetwork {
             var listTracks : [CMSpotifyTrack] = []
             let jsonOjects = JSON(tracks)
             for jsonObject in jsonOjects["items"] {
-                listPlaylists.append(CMSpotifyTrack.initCMSpotifyTrack(track: jsonObject.1))
+                listTracks.append(CMSpotifyTrack.initCMSpotifyTrack(track: jsonObject.1))
             }
             if listTracks.count > 0 {
                 completionHandler(listTracks, nil)

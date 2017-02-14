@@ -32,7 +32,9 @@ class CMSpotifyProviderManager: CMBaseProvider {
             return
         }
         //TODO MEthod getPlaylists + callback result
-        spotifyNetwork.getPlaylists()
+        spotifyNetwork.getPlaylists(completionHandler: { (result:[CMSpotifyPlaylist]?, error:String?) in
+            
+        })
         
     }
     

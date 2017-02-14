@@ -23,6 +23,7 @@ class CMSpotifyPlaylist : NSObject {
         self.image = playlist["images"]["spotify"].url!
         self.owner = playlist["owner"].string!
         self.is_public = playlist["public"].bool!
+        self.tracks = []
     }
     public static func initCMSpotifyPlaylist(playlist : JSON) -> CMSpotifyPlaylist {
        return CMSpotifyPlaylist(playlist: playlist)

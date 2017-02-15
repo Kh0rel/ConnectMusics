@@ -23,7 +23,7 @@ public class CMSpotifyProviderNetwork {
     }
     
     private func applicationAuthentication() {
-        let url = URL(string: "https://accounts.spotify.com/authorize/?client_id=\(clientInformation["client_id"])&response_type=code&redirect_uri=\(clientInformation["redirect_uri"])&scope=\(clientInformation["scopeNeeded"])")
+        let url = URL(string: "https://accounts.spotify.com/authorize/?client_id=\(clientInformation["client_id"]!)&response_type=code&redirect_uri=\(clientInformation["redirect_uri"]!)&scope=\((clientInformation["scopeNeeded"]?.replacingOccurrences(of: " ", with: "%20"))!)")
             UIApplication.shared.openURL(url!)
     }
     
@@ -33,8 +33,8 @@ public class CMSpotifyProviderNetwork {
             let base64 = data!.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
             let parameters = [
                 "grant_type" : "authorization_code",
-                "code" : authenticationCode.replacingOccurrences(of: "\(clientInformation["redirect_uri"])?code=", with: ""),
-                "redirect_uri" : clientInformation["redirect_uri"]
+                "code" : authenticationCode.replacingOccurrences(of: "\(clientInformation["redirect_uri"]!)?code=", with: ""),
+                "redirect_uri" : clientInformation["redirect_uri"]!
             ]
             let headers = [
                 "Authorization" : "Basic " + base64

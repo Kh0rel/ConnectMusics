@@ -32,18 +32,25 @@ public class CMSharedProviders: NSObject {
      * @param clientSecret like ClientID this param is required if you need an Oauth2 authentication
      * @param redirectURI it's your URIScheme for retrieve access_token if your provider need one URI
      * @param scopeNeeded it's a permission scheme needed for token creation , it's different for any providers
+     * @param completionHandler callback for notify correct creation of Provider
      */
-     public func addProviders(provider:ProviderType,clientID:String? = nil,clientSecret:String? = nil,redirectURI:String? = nil,scopeNeeded:String? = nil) {
-        //Condition If an provider already exist
+    public func addProviders(provider:ProviderType,clientID:String? = nil,clientSecret:String? = nil,redirectURI:String? = nil,scopeNeeded:String? = nil,completionHandler: @escaping (_ result:String) -> Void) {
+        guard getProvider(wantedProvider: provider) == nil else {
+            completionHandler("This provider type alreay exist")
+            return
+        }
         switch provider {
         case .appleMusic:
             providersInstance.append(CMAppleMusicProviderManager.createProviderInstance(cliendID: nil, clientSecret: nil, redirect_uri: nil, scopeNeeded: nil))
+            completionHandler("Apple music provider is correctly created")
             break
         case .spotify:
             providersInstance.append(CMSpotifyProviderManager.createProviderInstance(cliendID: clientID, clientSecret: clientSecret, redirect_uri: redirectURI, scopeNeeded: scopeNeeded))
+            completionHandler("Spotify provider is correctly created")
             break
         }
     }
+    
     /*!
      * @discussion method which allow access to specific provider already instanciate
      * @param wantedProvider filter parameter
@@ -57,6 +64,7 @@ public class CMSharedProviders: NSObject {
         }
         return nil
     }
+    
     // TODO UNIT TEST ONLY A PROVIDER TYPE DEFINED IN PARAMATER
     public func getPlaylistsByProviderType(providerType:ProviderType) -> [CMPlaylist]? {
         var filteredPlaylists:[CMPlaylist] = []
@@ -70,5 +78,15 @@ public class CMSharedProviders: NSObject {
         }
         
         return filteredPlaylists
-    } 
+    }
+    
+    internal func appendPlaylists(provider:ProviderType,playlistsToAdd:[CMPlaylist]) {
+        var refreshPlaylist:[CMPlaylist] = []
+        for playlist in self.playlists {
+            if playlist.type != provider {
+                refreshPlaylist.append(playlist)
+            }
+        }
+        refreshPlaylist.append(playlistsToAdd)
+    }
 }

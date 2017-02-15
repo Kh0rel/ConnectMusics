@@ -24,4 +24,14 @@ public class CMPlaylist: NSObject {
         return playlistInstance
     }
     
+    public static func initPlaylistFromSpotify(playlistItem:CMSpotifyPlaylist) -> CMPlaylist {
+        let playlistInstance:CMPlaylist = CMPlaylist()
+        
+        playlistInstance.name = playlistItem.name
+        playlistInstance.mediaItem = playlistItem
+        playlistInstance.provider = .spotify
+        
+        return playlistInstance
+    }
+    
 }

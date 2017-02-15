@@ -8,25 +8,25 @@
 
 import UIKit
 
-class CMSpotifyProviderManager: CMBaseProvider {
+public class CMSpotifyProviderManager: CMBaseProvider {
     
-    var type: ProviderType? = .spotify
+    public var type: ProviderType? = .spotify
     var spotifyNetwork:CMSpotifyProviderNetwork
     
     fileprivate init(cliendID: String?, clientSecret: String?, redirect_uri: String?, scopeNeeded: String?) {
         spotifyNetwork = CMSpotifyProviderNetwork(clientID: cliendID!, clientSecret: clientSecret!, redirectURI: redirect_uri!, scopeNeeded: scopeNeeded)
     }
     
-    internal static func createProviderInstance(cliendID: String?, clientSecret: String?, redirect_uri: String?, scopeNeeded: String?) -> CMBaseProvider {
+    public static func createProviderInstance(cliendID: String?, clientSecret: String?, redirect_uri: String?, scopeNeeded: String?) -> CMBaseProvider {
         let managerInstance:CMSpotifyProviderManager = CMSpotifyProviderManager(cliendID: cliendID, clientSecret: clientSecret, redirect_uri: redirect_uri, scopeNeeded: scopeNeeded)
         return managerInstance
     }
     
-    func login(withAuthenticationCode:String) {
+    public func login(withAuthenticationCode:String) {
         spotifyNetwork.getUserToken(authenticationCode: withAuthenticationCode)
     }
     
-    func getPlaylists(completionHandler:@escaping (_ playlists:[CMPlaylist]?,_ error:String?) -> Void) {
+    public func getPlaylists(completionHandler:@escaping (_ playlists:[CMPlaylist]?,_ error:String?) -> Void) {
         guard spotifyNetwork.clientInformation["access_token"] != nil else {
             completionHandler(nil,"NO TOKEN AVAILABLE")
             return

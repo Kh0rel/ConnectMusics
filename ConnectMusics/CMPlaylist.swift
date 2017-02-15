@@ -8,13 +8,13 @@
 
 import MediaPlayer
 
-class CMPlaylist: NSObject {
+public class CMPlaylist: NSObject {
 
     var name:String = ""
     var mediaItem:AnyObject?
     var provider:ProviderType?
     
-    static public func initPlaylistFromAppleMusic(playlistItem:MPMediaPlaylist) -> CMPlaylist {
+    public static func initPlaylistFromAppleMusic(playlistItem:MPMediaPlaylist) -> CMPlaylist {
         let playlistInstance:CMPlaylist = CMPlaylist()
         
         playlistInstance.name = playlistItem.name!

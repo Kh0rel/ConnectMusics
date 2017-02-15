@@ -8,16 +8,16 @@
 
 import MediaPlayer
 
-class CMAppleMusicProviderManager: CMBaseProvider {
+public class CMAppleMusicProviderManager: CMBaseProvider {
     
-    var type: ProviderType? = .appleMusic
+    public var type: ProviderType? = .appleMusic
     var appleMusicNetwork: CMAppleMusicProviderNetwork = CMAppleMusicProviderNetwork()
     
-    internal static func createProviderInstance(cliendID: String?, clientSecret: String?, redirect_uri: String?, scopeNeeded: String?) -> CMBaseProvider {
+    public static func createProviderInstance(cliendID: String?, clientSecret: String?, redirect_uri: String?, scopeNeeded: String?) -> CMBaseProvider {
         return CMAppleMusicProviderManager()
     }
     
-    func getPlaylists(completionHandler:@escaping (_ playlists:[CMPlaylist]?,_ error:String?) -> Void) {
+    public func getPlaylists(completionHandler:@escaping (_ playlists:[CMPlaylist]?,_ error:String?) -> Void) {
         appleMusicNetwork.retrievePlaylistSubscription { (retrievedPlaylist:[MPMediaPlaylist]?, error:String?) in
             if error != nil {
                 var abstractPlaylists:[CMPlaylist] = []

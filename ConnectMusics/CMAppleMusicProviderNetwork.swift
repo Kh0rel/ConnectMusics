@@ -8,9 +8,10 @@
 import MediaPlayer
 import StoreKit
 import UIKit
-class CMAppleMusicProviderNetwork {
 
-    func retrievePlaylistSubscription(completionHandler:@escaping ([MPMediaPlaylist]?,String?) -> Void) {
+public class CMAppleMusicProviderNetwork {
+
+    public func retrievePlaylistSubscription(completionHandler:@escaping ([MPMediaPlaylist]?,String?) -> Void) {
         MPMediaLibrary.requestAuthorization { (authorization:MPMediaLibraryAuthorizationStatus) in
             if authorization != MPMediaLibraryAuthorizationStatus.authorized {
                 completionHandler(nil,"NOT AUTHORIZED TO MEDIA LIBRARY ACCESS")

@@ -38,8 +38,8 @@ public class CMSpotifyProviderManager: CMBaseProvider {
                 for spotifyPlaylist in result! {
                     playlists.append(CMPlaylist.initPlaylistFromSpotify(playlistItem: spotifyPlaylist))
                 }
-                completionHandler(nil)
                 CMSharedProviders.sharedInstance.appendPlaylists(provider:.spotify,playlistsToAdd:playlists)
+                completionHandler(nil)
             } else {
                 completionHandler(error)
             }

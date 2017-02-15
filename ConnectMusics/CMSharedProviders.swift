@@ -73,11 +73,12 @@ public class CMSharedProviders: NSObject {
                 filteredPlaylists.append(playlist)
             }
         }
+        
         if filteredPlaylists.count > 0 {
-            return nil
+            return filteredPlaylists
         }
         
-        return filteredPlaylists
+        return nil
     }
     
     internal func appendPlaylists(provider:ProviderType,playlistsToAdd:[CMPlaylist]) {

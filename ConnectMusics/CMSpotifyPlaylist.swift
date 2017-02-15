@@ -13,7 +13,6 @@ public class CMSpotifyPlaylist : NSObject {
     
     var name : String = ""
     var id : String = ""
-    var image : URL?
     var owner : String = ""
     var is_public : Bool = true
     var tracks : [CMSpotifyTrack] = []
@@ -23,11 +22,10 @@ public class CMSpotifyPlaylist : NSObject {
     }
     
     init(playlist : JSON) {
-        self.name = playlist["name"].string!
-        self.id = playlist["id"].string!
-        self.image = playlist["images"]["spotify"].url!
-        self.owner = playlist["owner"].string!
-        self.is_public = playlist["public"].bool!
+        self.name = playlist["name"].stringValue
+        self.id = playlist["id"].stringValue
+        self.owner = playlist["owner"].stringValue
+        self.is_public = playlist["public"].boolValue
     }
     
     public static func initCMSpotifyPlaylistFromJSON(playlist : JSON) -> CMSpotifyPlaylist {

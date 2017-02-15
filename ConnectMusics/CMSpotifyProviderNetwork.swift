@@ -54,7 +54,7 @@ public class CMSpotifyProviderNetwork {
         
         Alamofire.request("https://api.spotify.com/v1/me/playlists", method: .get, headers: headers).responseJSON { (playlists : DataResponse<Any>) in
             var listPlaylists : [CMSpotifyPlaylist] = []
-            let jsonOjects = JSON(playlists)
+            let jsonOjects = JSON(playlists.data)
             for jsonObject in jsonOjects["items"] {
                 listPlaylists.append(CMSpotifyPlaylist.initCMSpotifyPlaylistFromJSON(playlist: jsonObject.1))
             }

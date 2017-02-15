@@ -22,6 +22,7 @@
 		74179C9A1E4FF6080037F924 /* CMSpotifyProviderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74179C991E4FF6080037F924 /* CMSpotifyProviderManager.swift */; };
 		74179C9C1E5102FD0037F924 /* CMSpotifyPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74179C9B1E5102FD0037F924 /* CMSpotifyPlaylist.swift */; };
 		74179C9E1E51113B0037F924 /* CMSpotifyTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74179C9D1E51113B0037F924 /* CMSpotifyTrack.swift */; };
+		7427C77C1E53E710001171B3 /* ConnectMusicsSpotifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7427C77B1E53E710001171B3 /* ConnectMusicsSpotifyTests.swift */; };
 		B3FAC5714D4E5722EB78693F /* Pods_ConnectMusics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90293FD7553E47323769D650 /* Pods_ConnectMusics.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		74179C991E4FF6080037F924 /* CMSpotifyProviderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSpotifyProviderManager.swift; sourceTree = "<group>"; };
 		74179C9B1E5102FD0037F924 /* CMSpotifyPlaylist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSpotifyPlaylist.swift; sourceTree = "<group>"; };
 		74179C9D1E51113B0037F924 /* CMSpotifyTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSpotifyTrack.swift; sourceTree = "<group>"; };
+		7427C77B1E53E710001171B3 /* ConnectMusicsSpotifyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectMusicsSpotifyTests.swift; sourceTree = "<group>"; };
 		90293FD7553E47323769D650 /* Pods_ConnectMusics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConnectMusics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50584BF884F6B11A9A502AA /* Pods-ConnectMusicsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnectMusicsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConnectMusicsTests/Pods-ConnectMusicsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B76AD8215ABFBEDB4CE65971 /* Pods-ConnectMusicsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnectMusicsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConnectMusicsTests/Pods-ConnectMusicsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				2C5A54EC1E411E1700C844C4 /* ConnectMusicsTests.swift */,
 				2C5A54EE1E411E1700C844C4 /* Info.plist */,
+				7427C77B1E53E710001171B3 /* ConnectMusicsSpotifyTests.swift */,
 			);
 			path = ConnectMusicsTests;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C5A54ED1E411E1700C844C4 /* ConnectMusicsTests.swift in Sources */,
+				7427C77C1E53E710001171B3 /* ConnectMusicsSpotifyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

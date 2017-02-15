@@ -10,7 +10,7 @@ import UIKit
 
 public class CMSpotifyProviderManager: CMBaseProvider {
     
-    public var type: ProviderType? = .spotify
+    public var type: ProviderType = .spotify
     var spotifyNetwork:CMSpotifyProviderNetwork
     
     fileprivate init(cliendID: String?, clientSecret: String?, redirect_uri: String?, scopeNeeded: String?) {

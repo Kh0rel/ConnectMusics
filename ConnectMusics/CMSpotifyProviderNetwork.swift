@@ -12,9 +12,16 @@ import SwiftyJSON
 
 public class CMSpotifyProviderNetwork {
     
-    internal var clientInformation:[String:String] = [:]
+    open var clientInformation:[String:String] = [:]
     
-    init(clientID:String,clientSecret:String,redirectURI:String,scopeNeeded:String?) {
+    //Unit Tests init
+   public init(accessToken : String, refreshToken : String){
+        clientInformation["access_token"] = accessToken
+        clientInformation["refresh_token"] = refreshToken
+        
+    }
+    
+    public init(clientID:String,clientSecret:String,redirectURI:String,scopeNeeded:String?) {
         clientInformation["client_id"] = clientID
         clientInformation["client_secret"] = clientSecret
         clientInformation["redirect_uri"] = redirectURI
@@ -88,7 +95,7 @@ public class CMSpotifyProviderNetwork {
         }
     }
     
-    func getMe() {
+    func getMe(completionHandler:@escaping (String?) -> Void) {
         let headers = [
             "Authorization" : "Bearer " + clientInformation["access_token"]!
         ]

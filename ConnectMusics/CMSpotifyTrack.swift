@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class CMSpotifyTrack: NSObject {
+public class CMSpotifyTrack: NSObject {
     let albumName : String
     let albumUrl : URL
     let albumId : String

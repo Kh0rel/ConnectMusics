@@ -28,18 +28,18 @@ public class CMSpotifyProviderManager: CMBaseProvider {
     
     public func getPlaylists(completionHandler:@escaping (_ error:String?) -> Void) {
         guard spotifyNetwork.clientInformation["access_token"] != nil else {
-            completionHandler(nil,"NO TOKEN AVAILABLE")
+            completionHandler("NO TOKEN AVAILABLE")
             return
         }
 
         spotifyNetwork.getPlaylists(completionHandler: { (result:[CMSpotifyPlaylist]?, error:String?) in
             if error == nil {
                 var playlists:[CMPlaylist] = []
-                for spotifyPlaylist in result {
+                for spotifyPlaylist in result! {
                     playlists.append(CMPlaylist.initPlaylistFromSpotify(playlistItem: spotifyPlaylist))
                 }
                 completionHandler(nil)
-                CMSharedProviders.sharedInstance.appendPlaylist(provider:.spotify,playlistToAdd:playlists)
+                CMSharedProviders.sharedInstance.appendPlaylists(provider:.spotify,playlistsToAdd:playlists)
             } else {
                 completionHandler(error)
             }
@@ -48,9 +48,10 @@ public class CMSpotifyProviderManager: CMBaseProvider {
         
     }
     
-    public func getMe(completionHandler:@escaping (error:String?)){
+    public func getMe(completionHandler:@escaping (_ error:String?) -> Void){
         guard spotifyNetwork.clientInformation["access_token"] != nil else {
-            completionHandler(nil,"NO TOKEN AVAILABLE")
+            completionHandler("NO TOKEN AVAILABLE")
+            return
         }
         
         spotifyNetwork.getMe { (error:String?) in
@@ -64,12 +65,13 @@ public class CMSpotifyProviderManager: CMBaseProvider {
     
     public func getTracks(playlistToUpdate:CMPlaylist,completionHandler:@escaping (_ playlistUpdated:CMPlaylist?,_ error:String?) -> Void) {
         guard playlistToUpdate.provider == .spotify else {
-            completionHandler(nil,"ERROR - Playlist : \(playlist.Updated.name) IS NOT A SPOTIFY Playlist")
+            completionHandler(nil,"ERROR - Playlist : \(playlistToUpdate.name) IS NOT A SPOTIFY Playlist")
+            return
         }
-        var playlistID = (playlistToUpdate.mediaItem as? CMSpotifyPlaylist)?.id
-        spotifyNetwork.getTracks(playlistID:playlistID) { (tracks:[CMSpotifyTrack]?, error:String?) in
+        let playlistID = (playlistToUpdate.mediaItem as? CMSpotifyPlaylist)?.id
+        spotifyNetwork.getTracks(playlistID:playlistID!) { (tracks:[CMSpotifyTrack]?, error:String?) in
             if error == nil {
-                (playlistToUpdate.mediaItem as! CMSpotifyPlaylist).tracks = tracks
+                (playlistToUpdate.mediaItem as! CMSpotifyPlaylist).tracks = tracks!
                 completionHandler(playlistToUpdate,nil)
             }
             else {

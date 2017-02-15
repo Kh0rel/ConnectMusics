@@ -81,12 +81,15 @@ public class CMSharedProviders: NSObject {
     }
     
     internal func appendPlaylists(provider:ProviderType,playlistsToAdd:[CMPlaylist]) {
-        var refreshPlaylist:[CMPlaylist] = []
+        var refreshPlaylists:[CMPlaylist] = []
         for playlist in self.playlists {
-            if playlist.type != provider {
-                refreshPlaylist.append(playlist)
+            if playlist.provider != provider {
+                refreshPlaylists.append(playlist)
             }
         }
-        refreshPlaylist.append(playlistsToAdd)
+        for playlist in playlistsToAdd {
+            refreshPlaylists.append(playlist)
+        }
+        self.playlists = refreshPlaylists
     }
 }

@@ -13,7 +13,7 @@ import Foundation
     var type: ProviderType { get set }
     
     static func createProviderInstance(cliendID:String?,clientSecret:String?,redirect_uri:String?,scopeNeeded:String?) -> CMBaseProvider
-    func getPlaylists(completionHandler:@escaping (_ playlists:[CMPlaylist]?,_ error:String?) -> Void)
+    func getPlaylists(completionHandler:@escaping (_ error:String?) -> Void)
     
     @objc optional func login(withAuthenticationCode:String)
 }

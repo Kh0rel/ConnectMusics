@@ -10,7 +10,7 @@ import UIKit
 
 public class CMSpotifyProviderManager: CMBaseProvider {
     
-    public var type: ProviderType? = .spotify
+    public var type: ProviderType = .spotify
     var spotifyNetwork:CMSpotifyProviderNetwork
     
     fileprivate init(cliendID: String?, clientSecret: String?, redirect_uri: String?, scopeNeeded: String?) {
@@ -31,7 +31,7 @@ public class CMSpotifyProviderManager: CMBaseProvider {
             completionHandler(nil,"NO TOKEN AVAILABLE")
             return
         }
-        //TODO MEthod getPlaylists + callback result
+
         spotifyNetwork.getPlaylists(completionHandler: { (result:[CMSpotifyPlaylist]?, error:String?) in
             
         })

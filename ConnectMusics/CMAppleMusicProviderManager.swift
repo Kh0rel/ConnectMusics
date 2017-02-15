@@ -10,7 +10,7 @@ import MediaPlayer
 
 public class CMAppleMusicProviderManager: CMBaseProvider {
     
-    public var type: ProviderType? = .appleMusic
+    public var type: ProviderType = .appleMusic
     var appleMusicNetwork: CMAppleMusicProviderNetwork = CMAppleMusicProviderNetwork()
     
     public static func createProviderInstance(cliendID: String?, clientSecret: String?, redirect_uri: String?, scopeNeeded: String?) -> CMBaseProvider {

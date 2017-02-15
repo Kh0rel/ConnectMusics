@@ -17,6 +17,11 @@ class CMSpotifyPlaylist : NSObject {
     var owner : String
     var is_public : Bool
     var tracks : [CMSpotifyTrack]
+    
+    override init(){
+        
+    }
+    
     init(playlist : JSON) {
         self.name = playlist["name"].string!
         self.id = playlist["id"].string!
@@ -25,7 +30,8 @@ class CMSpotifyPlaylist : NSObject {
         self.is_public = playlist["public"].bool!
         self.tracks = []
     }
-    public static func initCMSpotifyPlaylist(playlist : JSON) -> CMSpotifyPlaylist {
+    
+    public static func initCMSpotifyPlaylistFromJSON(playlist : JSON) -> CMSpotifyPlaylist {
        return CMSpotifyPlaylist(playlist: playlist)
     }
 }

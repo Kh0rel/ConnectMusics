@@ -45,9 +45,6 @@ public class CMSpotifyProviderNetwork {
                 self.clientInformation["access_token"] = data["access_token"].string
                 self.clientInformation["refresh_token"] = data["refresh_token"].string
             })
-            
-            //return tokens
-            
         }
     
     func getPlaylists(completionHandler:@escaping ([CMSpotifyPlaylist]?,String?) -> Void){
@@ -59,7 +56,7 @@ public class CMSpotifyProviderNetwork {
             var listPlaylists : [CMSpotifyPlaylist] = []
             let jsonOjects = JSON(playlists)
             for jsonObject in jsonOjects["items"] {
-                listPlaylists.append(CMSpotifyPlaylist.initCMSpotifyPlaylist(playlist: jsonObject.1))
+                listPlaylists.append(CMSpotifyPlaylist.initCMSpotifyPlaylistFromJSON(playlist: jsonObject.1))
             }
             if listPlaylists.count > 0 {
                 completionHandler(listPlaylists, nil)

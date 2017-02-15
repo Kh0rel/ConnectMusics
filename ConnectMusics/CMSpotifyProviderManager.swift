@@ -22,7 +22,7 @@ public class CMSpotifyProviderManager: CMBaseProvider {
         return managerInstance
     }
     
-    public func login(withAuthenticationCode:String) {
+    public func login(withAuthenticationCode: String) {
         spotifyNetwork.getUserToken(authenticationCode: withAuthenticationCode)
     }
     
@@ -33,10 +33,21 @@ public class CMSpotifyProviderManager: CMBaseProvider {
         }
 
         spotifyNetwork.getPlaylists(completionHandler: { (result:[CMSpotifyPlaylist]?, error:String?) in
-            
+            if error != nil {
+                var playlists:[CMPlaylist] = []
+                for spotifyPlaylist in result {
+                    playlists.append(CMPlaylist.initPlaylistFromSpotify(playlistItem: spotifyPlaylist))
+                }
+                completionHandler(playlists,nil)
+            }
+            completionHandler(nil,error)
         })
         
     }
     
-    
+    public func getTracks(playlistToUpdate:CMPlaylist,completionHandler:@escaping (_ playlistUpdated:CMPlaylist?,_ error:String?) -> Void) {
+        guard playlistToUpdate.provider == .spotify else {
+            completionHandler(nil,"ERROR - Playlist : \(playlist.Updated.name) IS NOT A SPOTIFY Playlist")
+        }
+    }
 }

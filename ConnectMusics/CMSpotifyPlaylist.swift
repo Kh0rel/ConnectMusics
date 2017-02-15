@@ -9,17 +9,17 @@
 import UIKit
 import SwiftyJSON
 
-class CMSpotifyPlaylist : NSObject {
+public class CMSpotifyPlaylist : NSObject {
     
-    var name : String
-    var id : String
-    var image : URL
-    var owner : String
-    var is_public : Bool
-    var tracks : [CMSpotifyTrack]
+    var name : String = ""
+    var id : String = ""
+    var image : URL?
+    var owner : String = ""
+    var is_public : Bool = true
+    var tracks : [CMSpotifyTrack] = []
     
     override init(){
-        
+        super.init()
     }
     
     init(playlist : JSON) {
@@ -28,7 +28,6 @@ class CMSpotifyPlaylist : NSObject {
         self.image = playlist["images"]["spotify"].url!
         self.owner = playlist["owner"].string!
         self.is_public = playlist["public"].bool!
-        self.tracks = []
     }
     
     public static func initCMSpotifyPlaylistFromJSON(playlist : JSON) -> CMSpotifyPlaylist {

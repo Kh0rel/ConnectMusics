@@ -24,7 +24,7 @@ public class CMAppleMusicProviderManager: CMBaseProvider {
                 for playlist in retrievedPlaylist! {
                     abstractPlaylists.append(CMPlaylist.initPlaylistFromAppleMusic(playlistItem: playlist))
                 }
-                CMSharedProviders.sharedInstance.appendPlaylists(provider: .appleMusic, playlistsToAdd: abstracPlaylists)
+                CMSharedProviders.sharedInstance.appendPlaylists(provider: .appleMusic, playlistsToAdd: abstractPlaylists)
                 completionHandler(nil)
             } else {
                 completionHandler(error)

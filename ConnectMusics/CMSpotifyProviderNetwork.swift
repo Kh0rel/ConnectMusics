@@ -84,5 +84,16 @@ public class CMSpotifyProviderNetwork {
             }
         }
     }
+    
+    func getMe() {
+        let headers = [
+            "Authorization" : "Bearer " + clientInformation["access_token"]!
+        ]
+        
+        Alamofire.request("https://api.spotify.com/v1/me", method: .get, headers: headers).responseJSON { (userInformations : DataResponse<Any>) in
+                let jsonObject = JSON(userInformations)
+                self.clientInformation["userID"] = jsonObject["id"].string!
+        }
+    }
 
 }

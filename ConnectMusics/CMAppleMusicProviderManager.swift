@@ -17,16 +17,17 @@ public class CMAppleMusicProviderManager: CMBaseProvider {
         return CMAppleMusicProviderManager()
     }
     
-    public func getPlaylists(completionHandler:@escaping (_ playlists:[CMPlaylist]?,_ error:String?) -> Void) {
+    public func getPlaylists(completionHandler:@escaping (_ error:String?) -> Void) {
         appleMusicNetwork.retrievePlaylistSubscription { (retrievedPlaylist:[MPMediaPlaylist]?, error:String?) in
             if error != nil {
                 var abstractPlaylists:[CMPlaylist] = []
                 for playlist in retrievedPlaylist! {
                     abstractPlaylists.append(CMPlaylist.initPlaylistFromAppleMusic(playlistItem: playlist))
                 }
-                completionHandler(abstractPlaylists,nil)
+                CMSharedProviders.sharedInstance.appendPlaylists(provider: .appleMusic, playlistsToAdd: abstracPlaylists)
+                completionHandler(nil)
             } else {
-                completionHandler(nil,error)
+                completionHandler(error)
             }
         }
     }

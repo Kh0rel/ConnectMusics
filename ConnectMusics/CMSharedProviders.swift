@@ -50,6 +50,7 @@ public class CMSharedProviders: NSObject {
             break
         }
     }
+    
     /*!
      * @discussion method which allow access to specific provider already instanciate
      * @param wantedProvider filter parameter
@@ -77,5 +78,15 @@ public class CMSharedProviders: NSObject {
         }
         
         return filteredPlaylists
-    } 
+    }
+    
+    internal func appendPlaylists(provider:ProviderType,playlistsToAdd:[CMPlaylist]) {
+        var refreshPlaylist:[CMPlaylist] = []
+        for playlist in self.playlists {
+            if playlist.type != provider {
+                refreshPlaylist.append(playlist)
+            }
+        }
+        refreshPlaylist.append(playlistsToAdd)
+    }
 }

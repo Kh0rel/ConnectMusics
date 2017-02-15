@@ -66,12 +66,16 @@ public class CMSpotifyProviderNetwork {
         }
     }
     
-    func getTracks(playlistID : String, userID : String, completionHandler:@escaping ([CMSpotifyTrack]?, String?) -> Void) {
+    func getTracks(playlistID : String, completionHandler:@escaping ([CMSpotifyTrack]?, String?) -> Void) {
+        guard clientInformation["userID"] != nil else {
+            completionHandler(nil,"Please refresh User information [GETME()] for this request")
+            return
+        }
         let headers = [
             "Authorization" : "Bearer " + clientInformation["access_token"]!
         ]
         
-        Alamofire.request("https://api.spotify.com/v1/users/\(userID)/playlists/\(playlistID)/tracks", method: .get, headers: headers).responseJSON { (tracks : DataResponse<Any>) in
+        Alamofire.request("https://api.spotify.com/v1/users/\(clientInformation["userID"]!)/playlists/\(playlistID)/tracks", method: .get, headers: headers).responseJSON { (tracks : DataResponse<Any>) in
             var listTracks : [CMSpotifyTrack] = []
             let jsonOjects = JSON(tracks)
             for jsonObject in jsonOjects["items"] {
@@ -85,14 +89,19 @@ public class CMSpotifyProviderNetwork {
         }
     }
     
-    func getMe() {
+    func getMe(completionHandler:@escaping (_ error:String?) -> Void) {
         let headers = [
             "Authorization" : "Bearer " + clientInformation["access_token"]!
         ]
         
         Alamofire.request("https://api.spotify.com/v1/me", method: .get, headers: headers).responseJSON { (userInformations : DataResponse<Any>) in
+            if userInformations.response?.statusCode == 200 {
                 let jsonObject = JSON(userInformations)
                 self.clientInformation["userID"] = jsonObject["id"].string!
+                completionHandler(nil)
+            } else {
+                completionHandler("CODE :  \(userInformations.response?.statusCode)  ERROR : \(userInformations.error?.localizedDescription)")
+            }
         }
     }
 

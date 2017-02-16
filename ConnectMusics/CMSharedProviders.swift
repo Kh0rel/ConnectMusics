@@ -73,7 +73,7 @@ public class CMSharedProviders: NSObject {
                 filteredPlaylists.append(playlist)
             }
         }
-        if filteredPlaylists.count > 0 {
+        if filteredPlaylists.count == 0 {
             return nil
         }
         

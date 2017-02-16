@@ -58,7 +58,7 @@ public class CMSpotifyProviderNetwork {
         
         Alamofire.request("https://api.spotify.com/v1/me/playlists", method: .get, headers: headers).responseJSON { (playlists : DataResponse<Any>) in
             var listPlaylists : [CMSpotifyPlaylist] = []
-            let jsonOjects = JSON(playlists.data)
+            let jsonOjects = JSON(playlists.data!)
             for jsonObject in jsonOjects["items"] {
                 listPlaylists.append(CMSpotifyPlaylist.initCMSpotifyPlaylistFromJSON(playlist: jsonObject.1))
             }
@@ -81,7 +81,7 @@ public class CMSpotifyProviderNetwork {
         
         Alamofire.request("https://api.spotify.com/v1/users/\(clientInformation["userID"]!)/playlists/\(playlistID)/tracks", method: .get, headers: headers).responseJSON { (tracks : DataResponse<Any>) in
             var listTracks : [CMSpotifyTrack] = []
-            let jsonOjects = JSON(tracks.data)
+            let jsonOjects = JSON(tracks.data!)
             for jsonObject in jsonOjects["items"] {
                 listTracks.append(CMSpotifyTrack.initCMSpotifyTrack(track: jsonObject.1))
             }
@@ -100,7 +100,7 @@ public class CMSpotifyProviderNetwork {
         
         Alamofire.request("https://api.spotify.com/v1/me", method: .get, headers: headers).responseJSON { (userInformations : DataResponse<Any>) in
             if userInformations.response?.statusCode == 200 {
-                let jsonObject = JSON(userInformations.data)
+                let jsonObject = JSON(userInformations.data!)
                 self.clientInformation["userID"] = jsonObject["id"].stringValue
                 completionHandler(nil)
             } else {

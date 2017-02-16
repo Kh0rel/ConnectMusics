@@ -1,3 +1,17 @@
+## 1.0.0 (February 16, 2017)
+
+Features:
+
+- Add Spotify playlist handler
+- Add Spotify track handler
+- Add Unit test on project
+
+Improvements:
+
+- Update README
+- Update version
+- bugfix
+
 ## 0.35.0 (February 12, 2017)
 
 Improvements:

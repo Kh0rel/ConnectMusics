@@ -8,7 +8,7 @@ You can see a sample application here : https://github.com/shemana/ConnectMusics
 - [Communication](#communication)
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Intro](#intro)
+  - **Intro -** [Intro](#intro)
 	- **Spotify -** [Authentication](#authentication), [Playlists](#playlists), [Tracks](#tracks)
 	- **Apple Music -** [Playlists subscribed](#playlists)
 - [FAQ](#faq)

@@ -13,6 +13,10 @@ public class CMSpotifyProviderManager: CMBaseProvider {
     public var type: ProviderType = .spotify
     var spotifyNetwork:CMSpotifyProviderNetwork
     
+    init(){
+        spotifyNetwork = CMSpotifyProviderNetwork()
+    }
+    
     fileprivate init(cliendID: String?, clientSecret: String?, redirect_uri: String?, scopeNeeded: String?) {
         spotifyNetwork = CMSpotifyProviderNetwork(clientID: cliendID!, clientSecret: clientSecret!, redirectURI: redirect_uri!, scopeNeeded: scopeNeeded)
     }

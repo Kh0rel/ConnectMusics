@@ -14,6 +14,10 @@ public class CMSpotifyProviderNetwork {
     
     internal var clientInformation:[String:String] = [:]
     
+    init() {
+        
+    }
+    
     init(clientID:String,clientSecret:String,redirectURI:String,scopeNeeded:String?) {
         clientInformation["client_id"] = clientID
         clientInformation["client_secret"] = clientSecret
@@ -77,7 +81,7 @@ public class CMSpotifyProviderNetwork {
         
         Alamofire.request("https://api.spotify.com/v1/users/\(clientInformation["userID"]!)/playlists/\(playlistID)/tracks", method: .get, headers: headers).responseJSON { (tracks : DataResponse<Any>) in
             var listTracks : [CMSpotifyTrack] = []
-            let jsonOjects = JSON(tracks)
+            let jsonOjects = JSON(tracks.data)
             for jsonObject in jsonOjects["items"] {
                 listTracks.append(CMSpotifyTrack.initCMSpotifyTrack(track: jsonObject.1))
             }

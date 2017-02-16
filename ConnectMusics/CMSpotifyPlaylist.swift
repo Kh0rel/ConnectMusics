@@ -16,6 +16,7 @@ public class CMSpotifyPlaylist : NSObject {
     public var owner : String = ""
     public var is_public : Bool = true
     public var tracks : [CMSpotifyTrack] = []
+
     
     override init(){
         super.init()

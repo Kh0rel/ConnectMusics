@@ -14,6 +14,10 @@ public class CMSpotifyProviderNetwork {
     
     internal var clientInformation:[String:String] = [:]
     
+    init() {
+        
+    }
+    
     init(clientID:String,clientSecret:String,redirectURI:String,scopeNeeded:String?) {
         clientInformation["client_id"] = clientID
         clientInformation["client_secret"] = clientSecret

@@ -16,14 +16,11 @@ public class CMSharedProviders: NSObject {
     /*!
      * @brief all playlists retreived from WebService
      */
-    private var playlists:[CMPlaylist] = []
+    internal var playlists:[CMPlaylist] = []
     /*!
      * @brief all providersIsnstance create by application
      */
-    private var providersInstance:[CMBaseProvider] = []
-    
-    //TODO UNIT TEST CREATE A NEW PROVIDER 
-    //TODO UNIT TEST 2 test second creation of the same provider type -> return error
+    internal var providersInstance:[CMBaseProvider] = []
     
     /*!
      * @discussion method which switch conditon for separate specific ProviderType instructions
@@ -65,7 +62,6 @@ public class CMSharedProviders: NSObject {
         return nil
     }
     
-    // TODO UNIT TEST ONLY A PROVIDER TYPE DEFINED IN PARAMATER
     public func getPlaylistsByProviderType(providerType:ProviderType) -> [CMPlaylist]? {
         var filteredPlaylists:[CMPlaylist] = []
         for playlist in playlists {
@@ -73,11 +69,12 @@ public class CMSharedProviders: NSObject {
                 filteredPlaylists.append(playlist)
             }
         }
-        if filteredPlaylists.count == 0 {
-            return nil
+        
+        if filteredPlaylists.count > 0 {
+            return filteredPlaylists
         }
         
-        return filteredPlaylists
+        return nil
     }
     
     internal func appendPlaylists(provider:ProviderType,playlistsToAdd:[CMPlaylist]) {

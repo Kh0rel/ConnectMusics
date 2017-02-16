@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C11C70B1E54EC8F00BAC57F /* token.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C11C70A1E54EC8E00BAC57F /* token.json */; };
 		2C5A54E81E411E1700C844C4 /* ConnectMusics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5A54DE1E411E1700C844C4 /* ConnectMusics.framework */; };
 		2C5A54ED1E411E1700C844C4 /* ConnectMusicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5A54EC1E411E1700C844C4 /* ConnectMusicsTests.swift */; };
 		2C5A54EF1E411E1700C844C4 /* ConnectMusics.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C5A54E11E411E1700C844C4 /* ConnectMusics.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -14,6 +15,9 @@
 		2C5A54FD1E41204B00C844C4 /* ProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5A54FC1E41204B00C844C4 /* ProviderType.swift */; };
 		2C5A54FF1E41226F00C844C4 /* CMSharedProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5A54FE1E41226E00C844C4 /* CMSharedProviders.swift */; };
 		2C5A55011E41244700C844C4 /* CMBaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5A55001E41244700C844C4 /* CMBaseProvider.swift */; };
+		2C5AD8D21E54FEEE00B032A5 /* ConnectMusicsSpotifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7427C77B1E53E710001171B3 /* ConnectMusicsSpotifyTests.swift */; };
+		2C5AD8D41E54FF0A00B032A5 /* token.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C11C70A1E54EC8E00BAC57F /* token.json */; };
+		2C5AD8D61E550B0900B032A5 /* ConnectMusicsSharedProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5AD8D51E550B0900B032A5 /* ConnectMusicsSharedProviders.swift */; };
 		2CD4C5F21E464B02009F4376 /* CMPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD4C5F11E464B02009F4376 /* CMPlaylist.swift */; };
 		2CD4C5F61E4654C4009F4376 /* CMAppleMusicProviderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD4C5F51E4654C4009F4376 /* CMAppleMusicProviderManager.swift */; };
 		2CD4C5F81E4655D1009F4376 /* CMAppleMusicProviderNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD4C5F71E4655D1009F4376 /* CMAppleMusicProviderNetwork.swift */; };
@@ -36,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C11C70A1E54EC8E00BAC57F /* token.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = token.json; sourceTree = "<group>"; };
 		2C5A54DE1E411E1700C844C4 /* ConnectMusics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ConnectMusics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C5A54E11E411E1700C844C4 /* ConnectMusics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectMusics.h; sourceTree = "<group>"; };
 		2C5A54E21E411E1700C844C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +51,7 @@
 		2C5A54FC1E41204B00C844C4 /* ProviderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderType.swift; sourceTree = "<group>"; };
 		2C5A54FE1E41226E00C844C4 /* CMSharedProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSharedProviders.swift; sourceTree = "<group>"; };
 		2C5A55001E41244700C844C4 /* CMBaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMBaseProvider.swift; sourceTree = "<group>"; };
+		2C5AD8D51E550B0900B032A5 /* ConnectMusicsSharedProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectMusicsSharedProviders.swift; sourceTree = "<group>"; };
 		2CD4C5F11E464B02009F4376 /* CMPlaylist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMPlaylist.swift; sourceTree = "<group>"; };
 		2CD4C5F51E4654C4009F4376 /* CMAppleMusicProviderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMAppleMusicProviderManager.swift; sourceTree = "<group>"; };
 		2CD4C5F71E4655D1009F4376 /* CMAppleMusicProviderNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMAppleMusicProviderNetwork.swift; sourceTree = "<group>"; };
@@ -55,6 +61,7 @@
 		74179C991E4FF6080037F924 /* CMSpotifyProviderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSpotifyProviderManager.swift; sourceTree = "<group>"; };
 		74179C9B1E5102FD0037F924 /* CMSpotifyPlaylist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSpotifyPlaylist.swift; sourceTree = "<group>"; };
 		74179C9D1E51113B0037F924 /* CMSpotifyTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSpotifyTrack.swift; sourceTree = "<group>"; };
+		7427C77B1E53E710001171B3 /* ConnectMusicsSpotifyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectMusicsSpotifyTests.swift; sourceTree = "<group>"; };
 		90293FD7553E47323769D650 /* Pods_ConnectMusics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConnectMusics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50584BF884F6B11A9A502AA /* Pods-ConnectMusicsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnectMusicsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConnectMusicsTests/Pods-ConnectMusicsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B76AD8215ABFBEDB4CE65971 /* Pods-ConnectMusicsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnectMusicsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConnectMusicsTests/Pods-ConnectMusicsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,8 +126,11 @@
 		2C5A54EB1E411E1700C844C4 /* ConnectMusicsTests */ = {
 			isa = PBXGroup;
 			children = (
+				2C11C70A1E54EC8E00BAC57F /* token.json */,
 				2C5A54EC1E411E1700C844C4 /* ConnectMusicsTests.swift */,
 				2C5A54EE1E411E1700C844C4 /* Info.plist */,
+				7427C77B1E53E710001171B3 /* ConnectMusicsSpotifyTests.swift */,
+				2C5AD8D51E550B0900B032A5 /* ConnectMusicsSharedProviders.swift */,
 			);
 			path = ConnectMusicsTests;
 			sourceTree = "<group>";
@@ -300,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C5AD8D41E54FF0A00B032A5 /* token.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C11C70B1E54EC8F00BAC57F /* token.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +426,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C5A54ED1E411E1700C844C4 /* ConnectMusicsTests.swift in Sources */,
+				2C5AD8D21E54FEEE00B032A5 /* ConnectMusicsSpotifyTests.swift in Sources */,
+				2C5AD8D61E550B0900B032A5 /* ConnectMusicsSharedProviders.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

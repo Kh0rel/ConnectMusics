@@ -31,7 +31,13 @@ public class ConnectMusics: NSObject {
      * @return The sum of the two numbers passed in.
      */
     public func initProvider(provider:ProviderType,clientID:String? = nil,clientSecret:String? = nil,redirectURI:String? = nil,scopeNeeded:String? = nil) {
-        self.getInstance().addProviders(provider: provider, clientID: clientID, clientSecret: clientSecret, redirectURI: redirectURI, scopeNeeded: scopeNeeded)
+        self.getInstance().addProviders(provider: provider, clientID: clientID, clientSecret: clientSecret, redirectURI: redirectURI, scopeNeeded: scopeNeeded) { (error:String?) in
+            if error == nil {
+                //No problems
+            } else {
+                print(error!)
+            }
+        }
     }
 
 }

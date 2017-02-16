@@ -9,23 +9,23 @@
 import UIKit
 import SwiftyJSON
 
-class CMSpotifyTrack: NSObject {
-    let albumName : String
-    let albumUrl : URL
-    let albumId : String
-    let albumImage : URL
-    let url : URL
-    let id : String
-    let name : String
+public class CMSpotifyTrack: NSObject {
+    public let albumName : String
+    public let albumUrl : URL
+    public let albumId : String
+    public let albumImage : URL
+    public let url : URL
+    public let id : String
+    public let name : String
     
     init(track: JSON) {
-        self.albumName = track["album"]["name"].string!
-        self.albumUrl = track["album"]["external_urls"]["spotify"].url!
-        self.albumId = track["album"]["id"].string!
-        self.albumImage = track["album"]["images"][0]["url"].url!
-        self.url = track["external_urls"]["spotify"].url!
-        self.id = track["id"].string!
-        self.name = track["name"].string!
+        self.albumName = track["track"]["album"]["name"].stringValue
+        self.albumUrl = track["track"]["album"]["external_urls"]["spotify"].url!
+        self.albumId = track["track"]["album"]["id"].stringValue
+        self.albumImage = track["track"]["album"]["images"][0]["url"].url!
+        self.url = track["track"]["external_urls"]["spotify"].url!
+        self.id = track["track"]["id"].stringValue
+        self.name = track["track"]["name"].stringValue
     }
     public static func initCMSpotifyTrack(track : JSON) -> CMSpotifyTrack {
         return CMSpotifyTrack(track: track)
